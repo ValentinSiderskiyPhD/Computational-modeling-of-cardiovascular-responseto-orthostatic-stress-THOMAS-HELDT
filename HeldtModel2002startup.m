@@ -51,29 +51,29 @@ C_a        = 2.0;  %ml/mmHg Ref 20
 
 %Systemic Veins
 %%Upper Body
-ZPFV_sv_ub  = 650;  %ml Ref 3
-C_sv_ub     = 8;    %ml/mmHg Ref Est.
+ZPFV_up  = 650;  %ml Ref 3
+C_up     = 8;    %ml/mmHg Ref Est. Upper body
 %%Kidney
-ZPFV_sv_k   = 150;  % ml Ref Est.
-C_sv_k      = 15;   %ml/mmHg Ref Est.
+ZPFV_kid   = 150;  % ml Ref Est.
+C_kid      = 15;   %ml/mmHg Ref Est.
 %%Splanchnic
-ZPFV_sv_s   = 1300; % ml Ref 75
-C_sv_s      = 55;   %ml/mmHg Ref 75
+ZPFV_sp   = 1300; % ml Ref 75
+C_sp      = 55;   %ml/mmHg Ref 75
 %%Lower Limbs
-ZPFV_sv_ll  = 350;  %ml Ref 3
-C_sv_ll     = 19;   %ml/mmHg Ref 34
+ZPFV_ll  = 350;  %ml Ref 3
+C_ll     = 19;   %ml/mmHg Ref 34
 
 %Abdominal Veins
-ZPFV_av     = 250;  %ml Ref 19
-C_av        = 25;   %ml/mmHg Ref 19
+ZPFV_ab     = 250;  %ml Ref 19
+C_ab        = 25;   %ml/mmHg Ref 19
 
 %Inferior vena cava
-ZPFV_ivc    = 75;   %ml Ref 19
-C_ivc       = 2;    %ml/mmHg Ref 19
+ZPFV_inf    = 75;   %ml Ref 19
+C_inf       = 2;    %ml/mmHg Ref 19
 
 %Superior vena cava
-ZPFV_svc    = 10;   %ml Ref 19
-C_svc       = 15;   %ml/mmHg Ref 19
+ZPFV_sup    = 10;   %ml Ref 19
+C_sup       = 15;   %ml/mmHg Ref 19
 
 %Gain values of the cardiopulumanry reflex
 G_R_p_ub    = -0.06;%PRU/mmHg sympathetic Ref 54 
@@ -108,6 +108,29 @@ freq = 2*pi*RR/60;
 P_th_high = -4;
 P_th_low  = -6;
 P_th_bias = (P_th_high+P_th_low)/2;
+
+
+P_max1 = 40.0; %mmHg Ref. 27 
+P_max2 = 7.00; %mmHg Ref. 27
+P_max3 = 5.0;  %mmHg Ref. 27
+
+% Based on Davis, 1991 
+%TODO
+
+%From 2004 thesis Table 4.1
+
+P_lv_init = 8; %mmHg
+P_up_init =77; % radial artery
+P_pv_init = 9; %pulmnary vein
+P_kid_init = 77;
+P_sp_init = 77;
+P_ll_init = 77;
+P_pa_init = 10;
+P_rv_init = 1;
+P_sup_init = 9;
+P_inf_init = 9;
+ P_ab_init = 9;
+P_a_init = 80; %mmHg
 %% Equations
 %d(Pa)/dt = (1/C_a)[ (Pa-Piv)/R_lo + (Pup-Pa)/Rup1 + (Pkid-Pa)/Rkid1 + (Psp-Pa)/Rsp1 + (Pll-Pa)/Rll1 ] + d(Pth)/dt
 
